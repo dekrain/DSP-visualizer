@@ -1,4 +1,4 @@
-Playfield.register_experiment('LPF', function (_module) {
+Playfield.register_experiment('LPF legacy', function (_module) {
 
 const tau = 2*Math.PI;
 
@@ -51,8 +51,8 @@ function Main() {
     const freq = 3; // Hz
     for (let i = 0; i < 1000; i++) {
         //signal[i] = 5*saw(i/200, freq);
-        //signal[i] = 5*Math.sin(tau*freq*i/200);
-        signal[i] = i == 0 ? 100 : 0;
+        signal[i] = 5*Math.cos(tau*freq*i/200);
+        //signal[i] = i == 0 ? 100 : 0;
     }
     _module.render = function() {
         _module.render = null;
