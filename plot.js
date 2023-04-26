@@ -30,7 +30,7 @@ Plotter.prototype.PlotFunction = function(func, opts) {
 }
 
 Plotter.prototype.PlotBuffer = function(buf, opts) {
-    let s = 0, i = 1, l = buf.length;
+    let s = 0, i = 1, l = buf.length, ss = 1;
     if (opts === undefined)
         opts = Object.create(null);
     if ('start' in opts)
@@ -39,7 +39,9 @@ Plotter.prototype.PlotBuffer = function(buf, opts) {
         i = opts.incr;
     if ('size' in opts)
         l = opts.size;
-    return this.PlotFunction(x => buf[s + i * Math.floor(x*l)], opts);
+    if ('scale' in opts)
+        ss = opts.scale;
+    return this.PlotFunction(x => ss*buf[s + i * Math.floor(x*l)], opts);
 }
 
 Plotter.prototype.CreateLegend = function() {

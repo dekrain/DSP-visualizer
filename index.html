@@ -1,9 +1,35 @@
-<table id="PlayfieldTabs"></table>
-<canvas width="1024" height="720" id="PlayfieldCanvas"></canvas>
-<!-- Libraries -->
-<script src="playfield.js" defer></script>
-<script src="plot.js" defer></script>
-<script src="complex.js" defer></script>
-<!-- Experiments -->
-<script src="e_DFT.js" defer></script>
-<script src="e_LPF_legacy.js" defer></script>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DSP playground</title>
+		<style>
+			body {
+				margin: 0;
+				height: 100%;
+				overflow: hidden;
+			}
+			#PlayfieldBox {
+				display: flex;
+				flex-direction: column;
+				flex: 0 1 auto;
+				height: 100%;
+			}
+			#PlayfieldCanvas {
+				flex: 1 1 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="PlayfieldBox">
+			<table id="PlayfieldTabs"></table>
+			<canvas id="PlayfieldCanvas"></canvas>
+		</div>
+		<!-- Libraries -->
+		<script src="playfield.js" defer></script>
+		<script src="plot.js" defer></script>
+		<script src="complex.js" defer></script>
+		<!-- Experiments -->
+		<script src="e_DFT.js" defer></script>
+		<script src="e_LPF_legacy.js" defer></script>
+	</body>
+</html>
